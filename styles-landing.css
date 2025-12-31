@@ -610,7 +610,7 @@ body{
   opacity:.9; pointer-events:none;
 }
 .bigDemo > *{position:relative; z-index:1}
-.bigDemo__eyebrow{font-family:var(--mono); font-size:12px; color: rgba(255,255,255,.70); margin-bottom:8px}
+.bigDemo__eyebrow{font-family:var(--mono); font-size:12px; color: rgba(255,255,255,.70); margin-top: -18px; margin-bottom:8px}
 
 .frame{
   border-radius: 22px;
@@ -1225,4 +1225,50 @@ section,
 }
 .feature .ul li {
   color: #0b1220 !important;
+}
+.flow {
+  position: relative;
+}
+
+.flow::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.flow > * {
+  position: relative;
+  z-index: 2;
+}
+.feature .ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature .ul li {
+  position: relative;
+  padding-left: 18px;
+  color: #0b1220 !important;
+}
+
+.feature .ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #2563eb;
+}
+.plan .btn--primary {
+  color: #ffffff !important;
+}
+
+.plan .btn--primary .btn__sub {
+  color: rgba(255,255,255,.85) !important;
 }
