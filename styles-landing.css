@@ -324,7 +324,7 @@ body{
   overflow:hidden;
 }
 .device__top{
-  display:flex; align-items:center; gap:4px;
+  display:flex; align-items:center; gap:8px;
   padding: 14px 16px;
   border-bottom:1px solid rgba(255,255,255,.10);
   background: linear-gradient(180deg, rgba(10,16,32,.55), rgba(10,16,32,.18));
@@ -906,8 +906,19 @@ body{
 .bg, .aurora, .grid, .noise, #fx { display:none !important; }
 
 html, body {
-  background: linear-gradient(180deg, #ffffff 0%, #f7f8fa 100%) !important;
-  color: #0b1220 !important;
+  background: #ffffff !important;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f4f6fa 50%,
+    #ffffff 100%
+  );
 }
 
 .scrollbar__fill{
@@ -990,7 +1001,7 @@ html, body {
 .btn--primary{
   background: linear-gradient(180deg, rgba(37,99,235,.95), rgba(37,99,235,.86)) !important;
   border-color: rgba(37,99,235,.40) !important;
-  color: #fff !important;
+  color: #ffffff !important;
 }
 .btn--primary::before{ display:none !important; }
 .btn__spark{ opacity:0 !important; } /* keep spark math but remove neon */
@@ -1034,9 +1045,11 @@ html, body {
 }
 .device__top{
   border-bottom: 1px solid rgba(11,18,32,.08) !important;
+  gap: 8px !important;
 }
 .device__title, .device__chip{
   color: rgba(11,18,32,.85) !important;
+  margin-left: 4px !important;
 }
 .device__chip{
   border-color: rgba(37,99,235,.25) !important;
@@ -1189,4 +1202,27 @@ section::after,
 .frame,
 .tile {
   border-radius: 24px !important;
+}
+/* FORCE hero text readable */
+.hero .h1,
+.hero .lead,
+.hero .trust__k,
+.hero .trust__v {
+  color: #0b1220 !important;
+}
+section,
+.section,
+.section--wide {
+  background: transparent !important;
+}
+.split__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.split__left .row {
+  margin-top: auto !important;
+}
+.feature .ul li {
+  color: #0b1220 !important;
 }
