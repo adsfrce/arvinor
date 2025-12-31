@@ -1062,10 +1062,16 @@ body::before {
   border-bottom: 1px solid rgba(11,18,32,.08) !important;
   gap: 8px !important;
 }
-.device__title, .device__chip{
+.device__title{
   color: rgba(11,18,32,.85) !important;
   margin-left: 4px !important;
 }
+
+.device__chip{
+  color: rgba(11,18,32,.85) !important;
+  margin-left: auto !important;
+}
+
 .device__chip{
   border-color: rgba(37,99,235,.25) !important;
   background: rgba(37,99,235,.08) !important;
@@ -1231,13 +1237,7 @@ section,
 }
 
 .flow::before {
-  content: "";
-  position: absolute;
-  inset: -20px;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  pointer-events: none;
-  z-index: 1;
+  display: none !important;
 }
 
 .flow > * {
