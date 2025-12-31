@@ -837,15 +837,15 @@ body{
 .footer__tag{color: rgba(255,255,255,.62); font-size:13px; margin-top:4px}
 .footer__micro{margin-top: 12px; color: rgba(255,255,255,.62); line-height:1.6; max-width: 520px}
 .footer__right{display:flex; gap: 12px; align-items:center}
-.footer__link{
-  color: rgba(255,255,255,.78);
-  text-decoration:none;
-  padding: 10px 12px;
-  border-radius: 14px;
-  border:1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
+.footer__link {
+  background: transparent !important;
+  border: none !important;
+  padding: 6px 8px !important;
 }
-.footer__link:hover{background: rgba(255,255,255,.06)}
+
+.footer__link:hover {
+  background: rgba(11,18,32,.06) !important;
+}
 
 /* Reveal animations (strong but tasteful) */
 .reveal{
