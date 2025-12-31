@@ -1325,7 +1325,7 @@ body::after{
   position: fixed;
   inset:0;
   z-index:-1;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   pointer-events:none;
 }
