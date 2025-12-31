@@ -1074,3 +1074,25 @@ html, body {
   filter: none !important;
   box-shadow: none !important;
 }
+
+/* FORCE rounded cards everywhere */
+.panel,
+.feature,
+.flow__step,
+.plan,
+.bigDemo,
+.callout,
+.quote,
+.pricingNote,
+.qa,
+.finalCTA,
+.list__item,
+.stat,
+.glassCard,
+.board__col,
+.card,
+.kpi,
+.frame,
+.tile {
+  border-radius: 24px !important;
+}
