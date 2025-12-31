@@ -20,7 +20,7 @@
   const nav = $('#nav');
   const setNav = () => {
     const sc = window.scrollY || 0;
-    nav.style.boxShadow = sc > 12 ? '0 20px 80px rgba(0,0,0,.28)' : 'none';
+    nav.style.boxShadow = sc > 12 ? '0 12px 40px rgba(15,23,42,.10)' : 'none';
   };
   window.addEventListener('scroll', setNav, { passive: true });
   setNav();
@@ -146,137 +146,13 @@
       // console.log('TRACK', el.getAttribute('data-track'));
     });
   });
+  // FAQ accordion: only one open at a time, default closed
+  const faqs = $$('.qa');
+  faqs.forEach(d => {
+    d.addEventListener('toggle', () => {
+      if (!d.open) return;
+      faqs.forEach(o => { if (o !== d) o.open = false; });
+    });
+  });
 
-  // Canvas particle field with mouse gravity (the “mind blown” layer)
-  const canvas = $('#fx');
-  const ctx = canvas?.getContext('2d');
-  if (canvas && ctx && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    let w = 0, h = 0, dpr = 1;
-    let particles = [];
-    let mouse = { x: 0, y: 0, vx: 0, vy: 0, active: false };
-
-    const resize = () => {
-      dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-      w = canvas.clientWidth = window.innerWidth;
-      h = canvas.clientHeight = window.innerHeight;
-      canvas.width = Math.floor(w * dpr);
-      canvas.height = Math.floor(h * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-      const count = Math.floor((w * h) / 26000); // scales with area
-      particles = new Array(count).fill(0).map(() => makeParticle());
-    };
-
-    const rnd = (a, b) => a + Math.random() * (b - a);
-    const makeParticle = () => {
-      const speed = rnd(0.2, 1.0);
-      const angle = rnd(0, Math.PI * 2);
-      return {
-        x: rnd(0, w),
-        y: rnd(0, h),
-        vx: Math.cos(angle) * speed,
-        vy: Math.sin(angle) * speed,
-        r: rnd(0.8, 2.2),
-        a: rnd(0.08, 0.22),
-        hue: rnd(195, 220) // blue family
-      };
-    };
-
-    const onMove = (e) => {
-      const x = e.clientX ?? (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
-      const y = e.clientY ?? (e.touches && e.touches[0] ? e.touches[0].clientY : 0);
-      mouse.vx = x - mouse.x;
-      mouse.vy = y - mouse.y;
-      mouse.x = x;
-      mouse.y = y;
-      mouse.active = true;
-    };
-    window.addEventListener('mousemove', onMove, { passive: true });
-    window.addEventListener('touchmove', onMove, { passive: true });
-    window.addEventListener('mouseleave', () => (mouse.active = false), { passive: true });
-
-    const draw = () => {
-      ctx.clearRect(0, 0, w, h);
-
-      // subtle vignette
-      const g = ctx.createRadialGradient(w * 0.5, h * 0.35, 0, w * 0.5, h * 0.35, Math.max(w, h));
-      g.addColorStop(0, 'rgba(0,0,0,0)');
-      g.addColorStop(1, 'rgba(0,0,0,0.35)');
-      ctx.fillStyle = g;
-      ctx.fillRect(0, 0, w, h);
-
-      const mx = mouse.x, my = mouse.y;
-      const influence = mouse.active ? 120 : 0;
-      const pull = mouse.active ? 0.0024 : 0;
-
-      // particles
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-
-        // mouse attraction
-        if (mouse.active) {
-          const dx = mx - p.x;
-          const dy = my - p.y;
-          const dist = Math.sqrt(dx*dx + dy*dy) + 0.001;
-          if (dist < influence) {
-            const f = (influence - dist) * pull;
-            p.vx += (dx / dist) * f + (mouse.vx * 0.00008);
-            p.vy += (dy / dist) * f + (mouse.vy * 0.00008);
-          }
-        }
-
-        // drift
-        p.x += p.vx;
-        p.y += p.vy;
-
-        // soft damping
-        p.vx *= 0.995;
-        p.vy *= 0.995;
-
-        // wrap
-        if (p.x < -20) p.x = w + 20;
-        if (p.x > w + 20) p.x = -20;
-        if (p.y < -20) p.y = h + 20;
-        if (p.y > h + 20) p.y = -20;
-
-        // draw glow dot
-        ctx.beginPath();
-        ctx.fillStyle = `hsla(${p.hue}, 90%, 70%, ${p.a})`;
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      // connecting lines (only near mouse for performance + wow)
-      if (mouse.active) {
-        for (let i = 0; i < particles.length; i++) {
-          const p = particles[i];
-          const dx = mx - p.x;
-          const dy = my - p.y;
-          const dist = Math.sqrt(dx*dx + dy*dy);
-          if (dist < 140) {
-            ctx.strokeStyle = `rgba(61,167,255,${(1 - dist/140) * 0.09})`;
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(mx, my);
-            ctx.stroke();
-          }
-        }
-
-        // mouse glow
-        const mg = ctx.createRadialGradient(mx, my, 0, mx, my, 180);
-        mg.addColorStop(0, 'rgba(61,167,255,0.14)');
-        mg.addColorStop(0.4, 'rgba(124,92,255,0.08)');
-        mg.addColorStop(1, 'rgba(0,0,0,0)');
-        ctx.fillStyle = mg;
-        ctx.fillRect(0, 0, w, h);
-      }
-
-      requestAnimationFrame(draw);
-    };
-
-    resize();
-    window.addEventListener('resize', resize, { passive: true });
-    requestAnimationFrame(draw);
-  }
 })();
