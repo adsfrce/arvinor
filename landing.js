@@ -64,16 +64,19 @@
     requestAnimationFrame(step);
   };
 
-  const countIO = new IntersectionObserver((entries) => {
-    for (const e of entries) {
-      if (!e.isIntersecting) continue;
-      const el = e.target;
+const countIO = new IntersectionObserver((entries) => {
+  for (const e of entries) {
+    if (!e.isIntersecting) continue;
+    const el = e.target;
+    if (el.__counted) continue;
+    el.__counted = true;
+
+    setTimeout(() => {
       const to = Number(el.getAttribute('data-count')) || 0;
-      if (el.__counted) continue;
-      el.__counted = true;
       animateCount(el, to);
-    }
-  }, { threshold: 0.35 });
+    }, 1200);
+  }
+}, { threshold: 0.35 });
 
   countEls.forEach(el => countIO.observe(el));
 
