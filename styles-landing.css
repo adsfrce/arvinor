@@ -1302,9 +1302,8 @@ section,
   background: transparent;
 }
 
-
 /* =========================
-   GLOBAL BACKGROUND SYSTEM (FINAL)
+   GLOBAL BACKGROUND SYSTEM (FIXED)
    ========================= */
 
 html, body {
@@ -1316,7 +1315,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -3;
+  z-index: 0;
   background-image: url("/background.png");
   background-size: cover;
   background-position: center;
@@ -1328,7 +1327,7 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: 1;
   background: rgba(255,255,255,0.30);
 }
 
@@ -1336,8 +1335,14 @@ body::after {
 #global-blur {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 2;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   pointer-events: none;
+}
+
+/* Content must sit ABOVE background */
+body > * {
+  position: relative;
+  z-index: 3;
 }
