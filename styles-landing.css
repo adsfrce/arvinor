@@ -229,7 +229,7 @@ body{
   0%,100%{transform:scale(1); opacity:.8}
   50%{transform:scale(1.35); opacity:1}
 }
-.hero__cta{display:flex; gap:14px; flex-wrap:wrap; margin: 18px 0 10px}
+.hero__cta{display:flex; gap:46px; flex-wrap:wrap; margin: 18px 0 10px}
 
 .trust{
   display:grid;
@@ -522,7 +522,7 @@ body{
   position:relative;
   padding-left: 18px;
   margin: 10px 0;
-  color: rgba(255,255,255,.70);
+  color: rgba(11,18,32,.78);
   line-height:1.5;
   font-size:13px;
 }
@@ -531,8 +531,8 @@ body{
   position:absolute; left:0; top:.6em;
   width:8px; height:8px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(61,167,255,.9), rgba(32,255,210,.9));
-  box-shadow: 0 0 18px rgba(61,167,255,.22);
+  background: #2563eb;
+  box-shadow: none;
 }
 
 /* Flow */
@@ -564,7 +564,11 @@ body{
 .flow__line{
   width: 62px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(61,167,255,.55), rgba(124,92,255,.45), rgba(32,255,210,.55));
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0),
+    rgba(11,18,32,.25),
+    rgba(0,0,0,0));
   opacity:.7;
   filter: blur(.0px);
   position:relative;
@@ -575,6 +579,7 @@ body{
   background: linear-gradient(90deg, rgba(61,167,255,.25), rgba(124,92,255,.20), rgba(32,255,210,.25));
   filter: blur(12px);
   opacity:.8;
+  display: none !important;
 }
 
 /* Big demo block */
@@ -663,7 +668,9 @@ body{
   display:inline-flex; align-items:center; justify-content:center;
   border:1px solid rgba(32,255,210,.25);
   background: rgba(32,255,210,.08);
-  color: rgba(255,255,255,.92);
+  color: #0b1220 !important;
+  border-color: rgba(11,18,32,.20) !important;
+  background: rgba(11,18,32,.06) !important;
   font-weight:900;
 }
 .list__title{font-weight:850; letter-spacing:-.02em}
@@ -742,7 +749,7 @@ body{
 .price__row{display:flex; align-items:baseline; gap: 10px}
 .price__main{font-size: 44px; font-weight:950; letter-spacing:-.05em}
 .price__unit{color: rgba(255,255,255,.68)}
-.price__alt{color: rgba(255,255,255,.70); margin-top: 6px; font-size: 14px}
+.price__alt{color: rgba(11,18,32,.75); margin-top: 6px; font-size: 14px}
 
 .plan__includes{display:grid; gap: 10px; margin: 14px 0 14px}
 .inc{display:flex; gap:10px; align-items:flex-start; color: rgba(255,255,255,.74); line-height:1.5}
@@ -776,7 +783,7 @@ body{
 .pricingNote__text{margin-top: 8px; color: rgba(255,255,255,.70); line-height:1.7}
 
 /* FAQ */
-.faq{margin-top: 18px; display:grid; gap: 12px; max-width: 900px}
+.faq{margin-top: 18px; display:grid; gap: 12px; max-width: 100%}
 .qa{
   border-radius: 22px;
   border:1px solid rgba(255,255,255,.12);
@@ -800,7 +807,7 @@ body{
 
 /* Final CTA */
 .finalCTA{
-  margin-top: 22px;
+  margin-top: 60px;
   border-radius: 28px;
   border:1px solid rgba(61,167,255,.22);
   background:
