@@ -229,7 +229,7 @@ body{
   0%,100%{transform:scale(1); opacity:.8}
   50%{transform:scale(1.35); opacity:1}
 }
-.hero__cta{display:flex; gap:46px; flex-wrap:wrap; margin: 18px 0 10px}
+.hero__cta{display:flex; gap:14px; flex-wrap:wrap; margin: 18px 0 10px}
 
 .trust{
   display:grid;
@@ -452,13 +452,17 @@ body{
 }
 .panel > *{position:relative; z-index:1}
 .panel__icon {
-  width: 56px !important;
-  height: 56px !important;
+  width: auto !important;
+  height: auto !important;
+  font-size: 32px !important;
+  line-height: 1;
+  margin-bottom: 14px;
+  background: none !important;
   border: none !important;
-  background: transparent !important;
+  box-shadow: none !important;
   color: #0b1220 !important;
-  font-size: 22px !important;
 }
+
 .panel p{margin:0; color: rgba(255,255,255,.72); line-height:1.7; font-size:14px}
 
 /* callout */
@@ -506,9 +510,15 @@ body{
 }
 .feature > *{position:relative; z-index:1}
 .badge {
-  background: rgba(37,99,235,.10) !important;
-  border-color: rgba(37,99,235,.30) !important;
-  color: rgba(11,18,32,.85) !important;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px !important;
+  background: rgba(37, 99, 235, 0.12) !important;
+  color: #2563eb !important;
+  font-weight: 600;
+  font-size: 12px;
+  border: none !important;
 }
 
 .feature__top{display:flex; flex-direction:column; gap:8px}
@@ -612,7 +622,8 @@ body{
 }
 .frame__bar{
   display:flex; align-items:center; gap:10px;
-  padding: 12px 14px;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
   border-bottom:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.04);
 }
@@ -662,12 +673,9 @@ body{
   width:28px; height:28px;
   border-radius: 10px;
   display:inline-flex; align-items:center; justify-content:center;
-  border:1px solid rgba(32,255,210,.25);
-  background: rgba(20,184,166,.15);
-  color: #0b1220 !important;
-  border-color: rgba(20,184,166,.35) !important;
-  background: rgba(11,18,32,.06) !important;
-  font-weight:900;
+  border: none;
+  background: rgba(20, 184, 166, 0.18);
+  color: #0b1220 !important;  font-weight:900;
 }
 .list__title{font-weight:850; letter-spacing:-.02em}
 .list__text{color: rgba(255,255,255,.70); margin-top: 4px; line-height:1.6; font-size:13px}
@@ -837,12 +845,15 @@ body{
 .footer__link {
   border: none !important;
   background: transparent !important;
+  padding: 8px 12px;
+  border-radius: 999px;
   text-decoration: none !important;
+  color: rgba(11,18,32,.75);
+  transition: background .15s ease;
 }
 
 .footer__link:hover {
-  background: rgba(11,18,32,.06) !important;
-  border-radius: 12px;
+  background: rgba(11,18,32,.06);
 }
 
 /* Reveal animations (strong but tasteful) */
@@ -998,12 +1009,15 @@ html, body {
 }
 
 .panel__icon {
-  width: 56px !important;
-  height: 56px !important;
+  width: auto !important;
+  height: auto !important;
+  font-size: 32px !important;
+  line-height: 1;
+  margin-bottom: 14px;
+  background: none !important;
   border: none !important;
-  background: transparent !important;
+  box-shadow: none !important;
   color: #0b1220 !important;
-  font-size: 22px !important;
 }
 
 .panel p, .feature p, .flow__text, .callout__text, .quote__text, .plan__hint, .price__alt, .micro, .pricingNote__text, .qa__a, .list__text, .stat__label, .glassCard__text, .hint, .tile__p, .tile__k{
@@ -1155,4 +1169,24 @@ section::after,
 .grid,
 .noise {
   display: none !important;
+}
+.panel,
+.feature,
+.flow__step,
+.plan,
+.bigDemo,
+.callout,
+.quote,
+.pricingNote,
+.qa,
+.finalCTA,
+.list__item,
+.stat,
+.glassCard,
+.board__col,
+.card,
+.kpi,
+.frame,
+.tile {
+  border-radius: 24px !important;
 }
