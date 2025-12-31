@@ -883,3 +883,168 @@ body{
   .reveal{transition:none !important; opacity:1 !important; transform:none !important; filter:none !important}
   .btn, .nav__link{transition:none !important}
 }
+
+/* =========================
+   LIGHT MODE OVERRIDES (final)
+   ========================= */
+.bg, .aurora, .grid, .noise, #fx { display:none !important; }
+
+html, body {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f8fa 100%) !important;
+  color: #0b1220 !important;
+}
+
+.scrollbar__fill{
+  background: linear-gradient(90deg, rgba(37,99,235,.95), rgba(79,70,229,.90), rgba(20,184,166,.90)) !important;
+  box-shadow: 0 0 14px rgba(37,99,235,.20) !important;
+}
+
+.nav{
+  background: rgba(255,255,255,.86) !important;
+  border-bottom: 1px solid rgba(11,18,32,.08) !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+.brand__name{ color: rgba(11,18,32,.92) !important; }
+.brand__tag{ color: rgba(11,18,32,.55) !important; }
+
+/* Raw logo: no background/glow anywhere */
+.brand__logo, .footer__logo{
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Links */
+.nav__link{
+  color: rgba(11,18,32,.70) !important;
+}
+.nav__link:hover{
+  background: rgba(11,18,32,.05) !important;
+  color: rgba(11,18,32,.92) !important;
+}
+
+/* Typography */
+.h1{
+  background: none !important;
+  color: rgba(11,18,32,.95) !important;
+  text-shadow: none !important;
+}
+.h2{ color: rgba(11,18,32,.92) !important; }
+.lead, .sub{
+  color: rgba(11,18,32,.70) !important;
+}
+
+/* Pills */
+.pill{
+  color: rgba(11,18,32,.82) !important;
+  border: 1px solid rgba(11,18,32,.10) !important;
+  background: rgba(255,255,255,.72) !important;
+}
+.pill--live{
+  border-color: rgba(20,184,166,.35) !important;
+  background: rgba(20,184,166,.10) !important;
+}
+.pill--soft{
+  border-color: rgba(37,99,235,.25) !important;
+  background: rgba(37,99,235,.08) !important;
+}
+.dot{
+  background: rgba(20,184,166,.95) !important;
+  box-shadow: 0 0 18px rgba(20,184,166,.25) !important;
+}
+
+/* Unified buttons: same height/padding in nav + everywhere */
+.btn{
+  padding: 12px 16px !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(11,18,32,.12) !important;
+  background: rgba(255,255,255,.85) !important;
+  color: rgba(11,18,32,.92) !important;
+  box-shadow: 0 12px 34px rgba(15,23,42,.08) !important;
+}
+.btn:hover{
+  transform: translateY(-2px) scale(1.01) !important;
+  border-color: rgba(11,18,32,.18) !important;
+  box-shadow: 0 18px 46px rgba(15,23,42,.12) !important;
+}
+.btn--big, .btn--xl{ padding: 12px 16px !important; border-radius: 16px !important; }
+.btn__sub{ color: rgba(11,18,32,.60) !important; }
+
+.btn--primary{
+  background: linear-gradient(180deg, rgba(37,99,235,.95), rgba(37,99,235,.86)) !important;
+  border-color: rgba(37,99,235,.40) !important;
+  color: #fff !important;
+}
+.btn--primary::before{ display:none !important; }
+.btn__spark{ opacity:0 !important; } /* keep spark math but remove neon */
+
+.nav__cta .btn { height: 44px !important; }
+.nav__cta { gap: 10px !important; }
+
+/* Cards/panels: remove glows/fades */
+.panel, .feature, .flow__step, .bigDemo, .callout, .quote, .plan, .pricingNote, .qa, .finalCTA, .trust, .list__item, .stat, .glassCard, .board__col, .card, .kpi, .frame, .tile{
+  background: rgba(255,255,255,.88) !important;
+  border: 1px solid rgba(11,18,32,.10) !important;
+  box-shadow: 0 14px 40px rgba(15,23,42,.08) !important;
+}
+.panel::before, .feature::after, .flow__step::before, .bigDemo::before, .callout::before, .quote::before, .plan::before, .finalCTA::before, .kpi::after, .halo, .floating{
+  display:none !important;
+}
+
+.panel__icon{
+  border: 1px solid rgba(11,18,32,.10) !important;
+  background: rgba(11,18,32,.04) !important;
+  color: rgba(11,18,32,.85) !important;
+}
+
+.panel p, .feature p, .flow__text, .callout__text, .quote__text, .plan__hint, .price__alt, .micro, .pricingNote__text, .qa__a, .list__text, .stat__label, .glassCard__text, .hint, .tile__p, .tile__k{
+  color: rgba(11,18,32,.70) !important;
+}
+.flow__num, .mono, .bigDemo__eyebrow, .quote__by, .tile__k{
+  color: rgba(11,18,32,.55) !important;
+}
+
+/* Device mock: keep but make it light */
+.device, .device__top, .device__body{
+  background: rgba(255,255,255,.88) !important;
+  border-color: rgba(11,18,32,.10) !important;
+}
+.device__top{
+  border-bottom: 1px solid rgba(11,18,32,.08) !important;
+}
+.device__title, .device__chip{
+  color: rgba(11,18,32,.85) !important;
+}
+.device__chip{
+  border-color: rgba(37,99,235,.25) !important;
+  background: rgba(37,99,235,.08) !important;
+}
+.kpi__label, .kpi__hint, .board__head, .card__meta, .hint{
+  color: rgba(11,18,32,.60) !important;
+}
+.card__title, .kpi__value, .plan__name, .price__main, .flow__title, .list__title, .pricingNote__title, .callout__title, .tile__v{
+  color: rgba(11,18,32,.92) !important;
+}
+.card__bar{ background: rgba(11,18,32,.08) !important; }
+.card__bar span{ background: linear-gradient(90deg, rgba(37,99,235,.85), rgba(79,70,229,.78), rgba(20,184,166,.80)) !important; }
+.chip, .chip.ok{
+  background: rgba(20,184,166,.10) !important;
+  border-color: rgba(20,184,166,.25) !important;
+  color: rgba(11,18,32,.82) !important;
+}
+
+/* Footer becomes light, not dark */
+.footer{
+  background: transparent !important;
+  border-top: 1px solid rgba(11,18,32,.08) !important;
+}
+.footer__link{
+  color: rgba(11,18,32,.75) !important;
+  border: 1px solid rgba(11,18,32,.10) !important;
+  background: rgba(255,255,255,.80) !important;
+}
+.footer__tag, .footer__micro{ color: rgba(11,18,32,.60) !important; }
+
+.nav__burger{border:1px solid rgba(11,18,32,.10) !important; background: rgba(255,255,255,.85) !important;}
+.nav__burger span{background: rgba(11,18,32,.70) !important;}
