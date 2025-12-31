@@ -528,17 +528,19 @@ body{
   position:relative;
   padding-left: 18px;
   margin: 10px 0;
-  color: rgba(11,18,32,.80);
+  color: rgba(11,18,32,.55); /* wie Subtext */
   line-height:1.5;
   font-size:13px;
 }
 .ul li::before{
   content:"";
-  position:absolute; left:0; top:.6em;
-  width:8px; height:8px;
-  border-radius: 999px;
-  background: #2563eb;
-  box-shadow: none;
+  position:absolute;
+  left:0;
+  top:.55em;
+  width:6px;
+  height:6px;
+  border-radius:999px;
+  background: rgba(37,99,235,.85);
 }
 
 /* Flow */
@@ -573,11 +575,11 @@ body{
   background: linear-gradient(
     90deg,
     rgba(0,0,0,0),
-    rgba(11,18,32,.25),
-    rgba(0,0,0,0));
-  opacity:.7;
-  filter: blur(.0px);
-  position:relative;
+    rgba(11,18,32,.18),
+    rgba(0,0,0,0)
+  );
+  opacity:.6;
+  filter: blur(6px);
 }
 .flow__line::after{
   content:"";
@@ -628,7 +630,9 @@ body{
   background: rgba(255,255,255,.04);
 }
 .frame__url{font-family:var(--mono); font-size:12px; color: rgba(255,255,255,.76)}
-.frame__body{padding: 16px}
+.frame__body{
+  padding: 10px 16px 16px;
+}
 .frame__hint{
   font-size: 13px;
   color: rgba(255,255,255,.72);
@@ -639,7 +643,7 @@ body{
   border:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.04);
 }
-.frame__tiles{display:grid; grid-template-columns: 1fr; gap:12px; margin-top: 14px}
+.frame__tiles{display:grid; grid-template-columns: 1fr; gap:12px; margin-top: 8px}
 .tile{
   border-radius: 18px;
   border:1px solid rgba(255,255,255,.10);
@@ -1222,7 +1226,7 @@ section,
 }
 
 .split__left .row {
-  margin-top: auto !important;
+  margin-top: 16px;
 }
 .feature .ul li {
   color: #0b1220 !important;
