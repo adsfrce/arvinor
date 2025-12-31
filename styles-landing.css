@@ -1110,3 +1110,25 @@ html, body {
 .floating {
   display: none !important;
 }
+.flow + .bigDemo .row {
+  margin-top: 28px !important;
+}
+.tile__k,
+.tile__v {
+  font-family: var(--sans) !important;
+}
+.frame__bar {
+  padding-top: 6px !important;
+}
+.plan,
+.plan * {
+  color: rgba(11,18,32,.85) !important;
+}
+
+.price__main {
+  color: #0b1220 !important;
+}
+.hero__cta,
+.split .row {
+  margin-top: auto !important;
+}
