@@ -1302,34 +1302,6 @@ section,
   background: transparent;
 }
 
-/* =========================
-   HARD GLOBAL BACKGROUND RESET
-   ========================= */
-
-html, body {
-  background: #ffffff !important;
-}
-
-body::before,
-body::after,
-.grid,
-.noise,
-.aurora,
-#fx,
-section::before,
-section::after,
-.section::before,
-.section::after,
-.section--wide::before,
-.section--wide::after {
-  display: none !important;
-  content: none !important;
-}
-
-/* absolute Sicherheit */
-* {
-  background-image: none !important;
-}
 
 /* =========================
    GLOBAL BACKGROUND IMAGE (FINAL)
