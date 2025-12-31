@@ -1,22 +1,24 @@
 /* styles-landing.css */
-:root{
-  --bg0:#070a14;
-  --bg1:#0a1020;
-  --fg:#eaf0ff;
-  --muted:rgba(234,240,255,.72);
-  --muted2:rgba(234,240,255,.52);
-  --line:rgba(234,240,255,.12);
-  --glass:rgba(255,255,255,.06);
-  --glass2:rgba(255,255,255,.10);
-  --shadow: 0 20px 80px rgba(0,0,0,.55);
-  --shadow2: 0 10px 40px rgba(0,0,0,.35);
-  --r: 24px;
-  --r2: 18px;
+:root {
+  --bg0: #ffffff;
+  --bg1: #f7f8fa;
 
-  --a:#3da7ff;      /* primary */
-  --a2:#7c5cff;     /* purple */
-  --a3:#20ffd2;     /* teal */
-  --a4:#ff3da7;     /* pink */
+  --fg: #0b1220;
+  --muted: rgba(11,18,32,0.75);
+  --muted2: rgba(11,18,32,0.55);
+
+  --line: rgba(11,18,32,0.08);
+
+  --glass: rgba(255,255,255,0.7);
+  --glass2: rgba(255,255,255,0.85);
+
+  --shadow: 0 20px 60px rgba(0,0,0,0.08);
+  --shadow2: 0 10px 30px rgba(0,0,0,0.06);
+
+  --a: #2563eb;      /* Apple-ish blue */
+  --a2: #4f46e5;
+  --a3: #14b8a6;
+  --a4: #ec4899;
 
   --max: 1200px;
   --pad: clamp(18px, 4vw, 34px);
