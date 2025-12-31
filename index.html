@@ -1,1 +1,791 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" />
 
+  <title>Arvinor — The Blue-Collar Operating System</title>
+  <meta name="description" content="Arvinor is the blue-collar operating system that replaces the chaotic tool stack with one clean flow: booked → job → status → paid." />
+
+  <meta property="og:title" content="Arvinor — The Blue-Collar Operating System" />
+  <meta property="og:description" content="One system. One flow. Clear status. Faster cash. 14-day free trial — no credit card." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="/logo.png" />
+  <link rel="preload" as="image" href="/logo.png" />
+  <link rel="stylesheet" href="styles-landing.css" />
+</head>
+
+<body>
+  <!-- Background layers -->
+  <div class="bg">
+    <canvas id="fx" aria-hidden="true"></canvas>
+    <div class="aurora" aria-hidden="true"></div>
+    <div class="grid" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="scrollbar" aria-hidden="true">
+    <div class="scrollbar__fill" id="scrollFill"></div>
+  </div>
+
+  <!-- Top nav -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="Arvinor home">
+        <img src="/logo.png" alt="Arvinor" class="brand__logo" />
+        <div class="brand__text">
+          <div class="brand__name">Arvinor</div>
+          <div class="brand__tag">Blue-Collar Operating System</div>
+        </div>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#product" class="nav__link">Product</a>
+        <a href="#how" class="nav__link">How it works</a>
+        <a href="#proof" class="nav__link">Why it wins</a>
+        <a href="#pricing" class="nav__link">Pricing</a>
+        <a href="#faq" class="nav__link">FAQ</a>
+        <a href="/demo" class="nav__link nav__link--pill" data-track="demo_top">Interactive demo</a>
+      </nav>
+
+      <div class="nav__cta">
+        <a class="btn btn--ghost" href="/app" data-track="signin_top">Sign in</a>
+        <a class="btn btn--primary btn--big" href="/app" data-track="open_app_top">
+          Open App
+          <span class="btn__spark" aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile panel -->
+    <div class="mnav" id="mnav" aria-hidden="true">
+      <div class="mnav__panel">
+        <a href="#product" class="mnav__link">Product</a>
+        <a href="#how" class="mnav__link">How it works</a>
+        <a href="#proof" class="mnav__link">Why it wins</a>
+        <a href="#pricing" class="mnav__link">Pricing</a>
+        <a href="#faq" class="mnav__link">FAQ</a>
+        <a href="/demo" class="mnav__link mnav__link--pill" data-track="demo_mobile">Interactive demo</a>
+        <div class="mnav__row">
+          <a class="btn btn--ghost" href="/app" data-track="signin_mobile">Sign in</a>
+          <a class="btn btn--primary btn--big" href="/app" data-track="open_app_mobile">Open App</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <div class="pills reveal">
+            <span class="pill pill--live">
+              <span class="dot" aria-hidden="true"></span>
+              14-day free trial
+            </span>
+            <span class="pill">No credit card</span>
+            <span class="pill">Cancel anytime</span>
+            <span class="pill pill--soft">Built for real operators</span>
+          </div>
+
+          <h1 class="h1 reveal">
+            The blue-collar operating system that turns chaos into a clean flow.
+          </h1>
+
+          <p class="lead reveal">
+            Arvinor replaces your scattered tools with one modern system where the work is visible,
+            the status is always current, and getting paid is part of the same workflow — not a separate mess.
+            If your business runs on “texts, notes, and memory,” you’re bleeding time, margin, and trust.
+          </p>
+
+          <div class="hero__cta reveal">
+            <a class="btn btn--primary btn--xl magnetic" href="/app" data-track="open_app_hero">
+              Start free trial
+              <span class="btn__sub">Open the app — no credit card</span>
+              <span class="btn__spark" aria-hidden="true"></span>
+            </a>
+
+            <a class="btn btn--ghost btn--xl magnetic" href="/demo" data-track="demo_hero">
+              Interactive demo
+              <span class="btn__sub">Try it in your browser</span>
+            </a>
+          </div>
+
+          <div class="trust reveal">
+            <div class="trust__item">
+              <span class="trust__k">One flow:</span>
+              <span class="trust__v">Booked → Job → Status → Paid</span>
+            </div>
+            <div class="trust__item">
+              <span class="trust__k">Designed for speed:</span>
+              <span class="trust__v">mobile-first, operator-first</span>
+            </div>
+            <div class="trust__item">
+              <span class="trust__k">Pricing:</span>
+              <span class="trust__v">simple, predictable, no surprises</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="device">
+            <div class="device__top">
+              <div class="traffic">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="device__title">Arvinor — Live View</div>
+              <div class="device__chip">Realtime Status</div>
+            </div>
+
+            <div class="device__body">
+              <div class="kpis">
+                <div class="kpi">
+                  <div class="kpi__label">Today</div>
+                  <div class="kpi__value">$<span data-count="18460">0</span></div>
+                  <div class="kpi__hint">tracked revenue</div>
+                </div>
+                <div class="kpi">
+                  <div class="kpi__label">In progress</div>
+                  <div class="kpi__value"><span data-count="14">0</span></div>
+                  <div class="kpi__hint">active jobs</div>
+                </div>
+                <div class="kpi">
+                  <div class="kpi__label">Next up</div>
+                  <div class="kpi__value"><span data-count="7">0</span></div>
+                  <div class="kpi__hint">scheduled</div>
+                </div>
+              </div>
+
+              <div class="board">
+                <div class="board__col">
+                  <div class="board__head">Booked</div>
+                  <div class="card card--glow">
+                    <div class="card__title">Fleet Service — Bay 2</div>
+                    <div class="card__meta">2pm · 3h · 2 techs</div>
+                    <div class="card__bar"><span style="width:38%"></span></div>
+                  </div>
+                  <div class="card">
+                    <div class="card__title">Pickup — Full Package</div>
+                    <div class="card__meta">4pm · 2h · 1 tech</div>
+                    <div class="card__bar"><span style="width:18%"></span></div>
+                  </div>
+                </div>
+
+                <div class="board__col">
+                  <div class="board__head">Job</div>
+                  <div class="card">
+                    <div class="card__title">Commercial — Recurring</div>
+                    <div class="card__meta">Started · On-site</div>
+                    <div class="card__bar"><span style="width:62%"></span></div>
+                  </div>
+                  <div class="card">
+                    <div class="card__title">Emergency Call</div>
+                    <div class="card__meta">Assigned · ETA 25m</div>
+                    <div class="card__bar"><span style="width:44%"></span></div>
+                  </div>
+                </div>
+
+                <div class="board__col">
+                  <div class="board__head">Paid</div>
+                  <div class="card">
+                    <div class="card__title">Invoice #1082</div>
+                    <div class="card__meta">Paid · Card</div>
+                    <div class="chip ok">Success</div>
+                  </div>
+                  <div class="card">
+                    <div class="card__title">Invoice #1081</div>
+                    <div class="card__meta">Paid · ACH</div>
+                    <div class="chip ok">Success</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="device__footer">
+                <div class="hint">
+                  Your team doesn’t need “another tool.” They need one system that makes the next step obvious.
+                </div>
+                <a class="mini" href="/demo" data-track="demo_visual">Open interactive demo →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating floating--a" aria-hidden="true"></div>
+          <div class="floating floating--b" aria-hidden="true"></div>
+          <div class="floating floating--c" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section" id="product">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="h2">Most businesses don’t have a workflow. They have a pile of tools.</h2>
+          <p class="sub">
+            A calendar here. Notes there. Payments somewhere else. A CRM that nobody opens.
+            Status updates by text. Work decisions made from memory. That’s not “hustle” — that’s friction.
+            Arvinor is built to remove friction aggressively.
+          </p>
+        </div>
+
+        <div class="grid3">
+          <div class="panel reveal">
+            <div class="panel__icon">⟂</div>
+            <h3 class="h3">Disjointed execution</h3>
+            <p>
+              When scheduling, job details, team assignments, and updates live in different places, your team
+              spends more time coordinating than doing the work. The result is missed handoffs, duplicated effort,
+              and a constant need for “where are we at?”
+            </p>
+          </div>
+
+          <div class="panel reveal">
+            <div class="panel__icon">◌</div>
+            <h3 class="h3">Status lives in heads</h3>
+            <p>
+              If the truth of the job is in someone’s brain, you don’t have a system — you have a single point of failure.
+              Arvinor makes status visible, current, and operational. The work speaks for itself.
+            </p>
+          </div>
+
+          <div class="panel reveal">
+            <div class="panel__icon">⌁</div>
+            <h3 class="h3">Payment is an afterthought</h3>
+            <p>
+              “We’ll invoice later” is how you create cashflow delays. Arvinor bakes the money into the flow.
+              You don’t “remember” to get paid — the system takes you there.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout reveal">
+          <div class="callout__copy">
+            <div class="callout__title">The goal is simple:</div>
+            <div class="callout__text">
+              make the next step obvious for everyone — the owner, the team, and the customer.
+              Arvinor does that by turning your operation into one continuous flow: booked → job → status → paid.
+            </div>
+          </div>
+          <div class="callout__cta">
+            <a class="btn btn--primary btn--big magnetic" href="/app" data-track="open_app_callout">
+              Start your free trial
+              <span class="btn__spark" aria-hidden="true"></span>
+            </a>
+            <a class="btn btn--ghost btn--big magnetic" href="/demo" data-track="demo_callout">See the demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modules -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="h2">One system, built like infrastructure.</h2>
+          <p class="sub">
+            Arvinor is not a “project app.” It’s not a “CRM.” It’s not “just scheduling.”
+            It’s the operating layer that connects your work, your team, your customers, and your cash — without plugin hell.
+          </p>
+        </div>
+
+        <div class="featureGrid">
+          <article class="feature reveal">
+            <div class="feature__top">
+              <div class="badge">Work</div>
+              <h3 class="h3">Jobs that actually run your day</h3>
+            </div>
+            <p>
+              Create jobs in seconds, attach what matters (customer, notes, instructions), and stop losing context.
+              Jobs move through a clean lifecycle so everyone knows what’s happening without asking.
+            </p>
+            <ul class="ul">
+              <li>Fast creation with operator-first defaults</li>
+              <li>Clear job ownership and responsibilities</li>
+              <li>Status updates that don’t require meetings</li>
+            </ul>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__top">
+              <div class="badge">Visibility</div>
+              <h3 class="h3">Live status, not wishful thinking</h3>
+            </div>
+            <p>
+              The “truth” of your operation is not what someone says — it’s what the system shows.
+              Arvinor gives you a live view of what’s booked, what’s in motion, what’s blocked, and what’s done.
+            </p>
+            <ul class="ul">
+              <li>Owner dashboard built for decisions</li>
+              <li>Team view built for execution</li>
+              <li>Less coordination, more output</li>
+            </ul>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__top">
+              <div class="badge">Scheduling</div>
+              <h3 class="h3">Scheduling that respects reality</h3>
+            </div>
+            <p>
+              Most schedules are fantasies. Real work has constraints: duration, travel, staffing, interruptions.
+              Arvinor is built to keep the schedule usable — so it doesn’t degrade into chaos.
+            </p>
+            <ul class="ul">
+              <li>Schedule → job → progress stays connected</li>
+              <li>Predictable handoffs between team members</li>
+              <li>Built to reduce last-minute firefighting</li>
+            </ul>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__top">
+              <div class="badge">Customers</div>
+              <h3 class="h3">Customer records without “CRM fatigue”</h3>
+            </div>
+            <p>
+              Your team shouldn’t “do CRM.” The system should quietly capture what’s needed while the work happens.
+              Customer context should be there when you need it — not buried.
+            </p>
+            <ul class="ul">
+              <li>Simple customer records tied to jobs</li>
+              <li>History you can trust at a glance</li>
+              <li>Less admin, fewer mistakes</li>
+            </ul>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__top">
+              <div class="badge">Money</div>
+              <h3 class="h3">Payments that close the loop</h3>
+            </div>
+            <p>
+              Getting paid is not a separate task. It’s part of finishing the job.
+              Arvinor keeps payment and completion connected so money doesn’t slip through the cracks.
+            </p>
+            <ul class="ul">
+              <li>“Paid / open” is a real operational state</li>
+              <li>Lower leakage, tighter cashflow</li>
+              <li>Cleaner accountability for the team</li>
+            </ul>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__top">
+              <div class="badge">Control</div>
+              <h3 class="h3">Simple roles. No permission maze.</h3>
+            </div>
+            <p>
+              Most software becomes a permission nightmare. Arvinor keeps it clean:
+              teams can execute, owners can control, and the system stays predictable as you grow.
+            </p>
+            <ul class="ul">
+              <li>Built to onboard fast</li>
+              <li>Easy to standardize across teams</li>
+              <li>No “training week” required</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- One Flow -->
+    <section class="section section--wide" id="proof">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="h2">The advantage is not a feature. It’s the flow.</h2>
+          <p class="sub">
+            If your business is growing, complexity will find you. The only defense is a system that makes the operation
+            legible. Arvinor wins because it keeps your business in one continuous flow — from booking to cash.
+          </p>
+        </div>
+
+        <div class="flow reveal">
+          <div class="flow__step">
+            <div class="flow__num">01</div>
+            <div class="flow__title">Booked</div>
+            <div class="flow__text">
+              A booking is not “just an event.” It becomes a job with context, ownership, and a next step.
+              You eliminate the gap where details get lost.
+            </div>
+          </div>
+          <div class="flow__line" aria-hidden="true"></div>
+          <div class="flow__step">
+            <div class="flow__num">02</div>
+            <div class="flow__title">Job</div>
+            <div class="flow__text">
+              Execution lives in the job: what to do, who’s responsible, and what “done” means.
+              The team moves faster because the system is clear.
+            </div>
+          </div>
+          <div class="flow__line" aria-hidden="true"></div>
+          <div class="flow__step">
+            <div class="flow__num">03</div>
+            <div class="flow__title">Status</div>
+            <div class="flow__text">
+              The status is not “a message.” It’s a state that drives actions.
+              Everyone sees the truth without meetings, chasing, or guessing.
+            </div>
+          </div>
+          <div class="flow__line" aria-hidden="true"></div>
+          <div class="flow__step">
+            <div class="flow__num">04</div>
+            <div class="flow__title">Paid</div>
+            <div class="flow__text">
+              Completion leads to payment. Payment closes the loop. Cashflow becomes tighter,
+              and “open invoices” stop becoming invisible debt.
+            </div>
+          </div>
+        </div>
+
+        <div class="bigDemo reveal">
+          <div class="bigDemo__copy">
+            <div class="bigDemo__eyebrow">No signup needed</div>
+            <h3 class="h2 h2--sm">Open the interactive demo and feel the difference.</h3>
+            <p class="sub">
+              This is not a slideshow and not a marketing video. It’s a hands-on demo you can click through.
+              If it doesn’t feel fast and clean in the first 30 seconds, you won’t want it — so we made sure it does.
+            </p>
+            <div class="row">
+              <a class="btn btn--primary btn--big magnetic" href="/demo" data-track="demo_big">
+                Open interactive demo
+                <span class="btn__spark" aria-hidden="true"></span>
+              </a>
+              <a class="btn btn--ghost btn--big magnetic" href="/app" data-track="open_app_big">Start free trial</a>
+            </div>
+          </div>
+
+          <div class="bigDemo__frame">
+            <div class="frame">
+              <div class="frame__bar">
+                <div class="traffic"><span></span><span></span><span></span></div>
+                <div class="frame__url">/demo</div>
+              </div>
+              <div class="frame__body">
+                <div class="frame__hint">
+                  Live preview disabled on purpose for performance and routing cleanliness.
+                  Click “Open interactive demo” to load <span class="mono">/demo</span>.
+                </div>
+                <div class="frame__tiles">
+                  <div class="tile">
+                    <div class="tile__k">Speed</div>
+                    <div class="tile__v">Operator-first UI</div>
+                    <div class="tile__p">Built to be used under pressure, not “admin time.”</div>
+                  </div>
+                  <div class="tile">
+                    <div class="tile__k">Clarity</div>
+                    <div class="tile__v">Status you can trust</div>
+                    <div class="tile__p">No guessing, no chasing. The system shows the truth.</div>
+                  </div>
+                  <div class="tile">
+                    <div class="tile__k">Cash</div>
+                    <div class="tile__v">Payment in the flow</div>
+                    <div class="tile__p">Fewer missed invoices. Tighter cashflow.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="halo" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why different -->
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div class="split__left reveal">
+            <h2 class="h2">Designed like Apple. Built for people who actually run things.</h2>
+            <p class="sub">
+              “Blue-collar” doesn’t mean low standards. It means higher standards.
+              The interface has to be fast, readable, and obvious — because the work is real and time is expensive.
+            </p>
+            <p class="sub">
+              Arvinor is opinionated by design: fewer toggles, fewer dead ends, fewer “setup weeks.”
+              You don’t buy Arvinor to customize it into something else. You buy it because it’s already built to work.
+            </p>
+
+            <div class="list">
+              <div class="list__item">
+                <div class="check">✓</div>
+                <div>
+                  <div class="list__title">No plugin hell</div>
+                  <div class="list__text">A system should be complete. Not a scavenger hunt of integrations.</div>
+                </div>
+              </div>
+
+              <div class="list__item">
+                <div class="check">✓</div>
+                <div>
+                  <div class="list__title">Everything stays connected</div>
+                  <div class="list__text">Booking, job details, status, and payment are the same thread.</div>
+                </div>
+              </div>
+
+              <div class="list__item">
+                <div class="check">✓</div>
+                <div>
+                  <div class="list__title">Built for speed under pressure</div>
+                  <div class="list__text">Fast actions, clean hierarchy, and zero visual clutter.</div>
+                </div>
+              </div>
+
+              <div class="list__item">
+                <div class="check">✓</div>
+                <div>
+                  <div class="list__title">Predictable pricing</div>
+                  <div class="list__text">No hidden fees. No “per feature” nonsense. Choose a tier and go.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <a class="btn btn--primary btn--big magnetic" href="/app" data-track="open_app_mid">
+                Start free trial
+                <span class="btn__spark" aria-hidden="true"></span>
+              </a>
+              <a class="btn btn--ghost btn--big magnetic" href="/demo" data-track="demo_mid">Try the demo</a>
+            </div>
+          </div>
+
+          <div class="split__right reveal">
+            <div class="quote">
+              <div class="quote__mark">“</div>
+              <div class="quote__text">
+                We didn’t build Arvinor to be “another SaaS.”
+                We built it to be the thing you trust when the day is busy, the phone is ringing, and the team is moving.
+                If the system isn’t obvious in that moment, it’s not a system.
+              </div>
+              <div class="quote__by">
+                Built for operators · Built for growth · Built to remove chaos
+              </div>
+            </div>
+
+            <div class="stats">
+              <div class="stat">
+                <div class="stat__num"><span data-count="30">0</span>–<span data-count="60">0</span>s</div>
+                <div class="stat__label">to “get it” in the demo</div>
+              </div>
+              <div class="stat">
+                <div class="stat__num"><span data-count="1">0</span> flow</div>
+                <div class="stat__label">booked → job → status → paid</div>
+              </div>
+              <div class="stat">
+                <div class="stat__num">14 days</div>
+                <div class="stat__label">free trial, no credit card</div>
+              </div>
+            </div>
+
+            <div class="glassCard">
+              <div class="glassCard__title">If you’re serious about scale…</div>
+              <div class="glassCard__text">
+                …you need a system that doesn’t break when you add team members, locations, and volume.
+                Arvinor is built to keep your operation legible as complexity increases.
+              </div>
+              <a class="mini" href="#pricing">See pricing →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="h2">Pricing that makes sense.</h2>
+          <p class="sub">
+            Two plans. No hidden tiers. No feature gates that force “upgrades” later.
+            Start the 14-day free trial with zero friction — no credit card required.
+          </p>
+        </div>
+
+        <div class="pricing">
+          <div class="plan reveal">
+            <div class="plan__top">
+              <div class="plan__name">Team</div>
+              <div class="plan__hint">Best for small teams that want one clean system.</div>
+            </div>
+
+            <div class="price">
+              <div class="price__row">
+                <div class="price__main">$249</div>
+                <div class="price__unit">/ month</div>
+              </div>
+              <div class="price__alt">$199 / month billed yearly</div>
+            </div>
+
+            <div class="plan__includes">
+              <div class="inc"><span class="check">✓</span> 5 users included</div>
+              <div class="inc"><span class="check">✓</span> All core workflows</div>
+              <div class="inc"><span class="check">✓</span> Scheduling + jobs + status</div>
+              <div class="inc"><span class="check">✓</span> Payment tracking in the flow</div>
+              <div class="inc"><span class="check">✓</span> Updates included</div>
+            </div>
+
+            <a class="btn btn--primary btn--big magnetic" href="/app" data-track="pricing_team">
+              Start 14-day free trial
+              <span class="btn__spark" aria-hidden="true"></span>
+            </a>
+
+            <div class="micro">
+              No credit card. Cancel anytime. If it doesn’t make your day simpler, don’t keep it.
+            </div>
+          </div>
+
+          <div class="plan plan--featured reveal">
+            <div class="plan__ribbon">Most scalable</div>
+            <div class="plan__top">
+              <div class="plan__name">Unlimited</div>
+              <div class="plan__hint">For teams that want to standardize the entire operation.</div>
+            </div>
+
+            <div class="price">
+              <div class="price__row">
+                <div class="price__main">$449</div>
+                <div class="price__unit">/ month</div>
+              </div>
+              <div class="price__alt">$379 / month billed yearly</div>
+            </div>
+
+            <div class="plan__includes">
+              <div class="inc"><span class="check">✓</span> Unlimited users</div>
+              <div class="inc"><span class="check">✓</span> Everything in Team</div>
+              <div class="inc"><span class="check">✓</span> Built for multi-crew operations</div>
+              <div class="inc"><span class="check">✓</span> Standardize processes faster</div>
+              <div class="inc"><span class="check">✓</span> Priority access (optional)</div>
+            </div>
+
+            <a class="btn btn--primary btn--big magnetic" href="/app" data-track="pricing_unlimited">
+              Start 14-day free trial
+              <span class="btn__spark" aria-hidden="true"></span>
+            </a>
+
+            <div class="micro">
+              Unlimited means you don’t think about seats. You think about throughput.
+            </div>
+          </div>
+        </div>
+
+        <div class="pricingNote reveal">
+          <div class="pricingNote__title">Straight talk:</div>
+          <div class="pricingNote__text">
+            The ROI comes from one thing: fewer coordination hours, fewer missed details, fewer payment delays,
+            and faster onboarding. If you’re currently “running operations” through chats and mental notes,
+            Arvinor pays for itself by removing the invisible friction you’ve gotten used to.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="h2">FAQ</h2>
+          <p class="sub">
+            If you’re evaluating tools, you don’t need marketing fluff — you need direct answers.
+          </p>
+        </div>
+
+        <div class="faq">
+          <details class="qa reveal" open>
+            <summary>Do I need a credit card to start the trial?</summary>
+            <div class="qa__a">
+              No. The trial is 14 days, and you can explore the system without entering payment details.
+              When you’re ready to keep it, you choose a plan and continue.
+            </div>
+          </details>
+
+          <details class="qa reveal">
+            <summary>What happens after the 14-day trial?</summary>
+            <div class="qa__a">
+              You decide. If Arvinor is making the operation cleaner, you pick a plan and keep running.
+              If it’s not, you stop — no awkward calls, no lock-in.
+            </div>
+          </details>
+
+          <details class="qa reveal">
+            <summary>Is Arvinor only for “blue-collar” businesses?</summary>
+            <div class="qa__a">
+              It’s built for operators — teams that execute real work, manage schedules, run crews, and want status clarity.
+              That includes service businesses, agencies, and internal ops teams. If you value throughput and clarity, it fits.
+            </div>
+          </details>
+
+          <details class="qa reveal">
+            <summary>What’s the difference between Team and Unlimited?</summary>
+            <div class="qa__a">
+              Team includes 5 users and is perfect if you’re tight on seats. Unlimited removes seat limits so you can scale
+              without counting users. Both plans include the core system; Unlimited is for standardization at scale.
+            </div>
+          </details>
+
+          <details class="qa reveal">
+            <summary>Is there an interactive demo?</summary>
+            <div class="qa__a">
+              Yes. It’s a click-through demo you can use right away at <span class="mono">/demo</span>.
+              If the product doesn’t feel fast and obvious there, it won’t in real life — so we made sure it does.
+            </div>
+          </details>
+        </div>
+
+        <div class="finalCTA reveal">
+          <div class="finalCTA__copy">
+            <h2 class="h2">Run one system. Stop coordinating chaos.</h2>
+            <p class="sub">
+              Arvinor is built for owners who want control and teams who want clarity.
+              If you’re tired of duct-taping tools together, open the app and start the free trial.
+            </p>
+          </div>
+          <div class="finalCTA__buttons">
+            <a class="btn btn--primary btn--xl magnetic" href="/app" data-track="open_app_bottom">
+              Start free trial
+              <span class="btn__sub">14 days · no credit card</span>
+              <span class="btn__spark" aria-hidden="true"></span>
+            </a>
+            <a class="btn btn--ghost btn--xl magnetic" href="/demo" data-track="demo_bottom">
+              Interactive demo
+              <span class="btn__sub">Try it now</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <div class="footer__brand">
+          <img src="/logo.png" alt="Arvinor" class="footer__logo" />
+          <div>
+            <div class="footer__name">Arvinor</div>
+            <div class="footer__tag">The blue-collar operating system.</div>
+          </div>
+        </div>
+        <div class="footer__micro">
+          Booked → Job → Status → Paid. Built to remove chaos and tighten cashflow.
+        </div>
+      </div>
+
+      <div class="footer__right">
+        <a href="/demo" class="footer__link">Demo</a>
+        <a href="/app" class="footer__link">App</a>
+        <a href="/legal" class="footer__link">Legal</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="landing.js" defer></script>
+</body>
+</html>
