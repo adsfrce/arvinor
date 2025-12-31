@@ -1063,7 +1063,7 @@ html, body {
 }
 .footer__link{
   color: rgba(11,18,32,.75) !important;
-  border: 1px solid rgba(11,18,32,.10) !important;
+  border: none !important;
   background: rgba(255,255,255,.80) !important;
 }
 .footer__tag, .footer__micro{ color: rgba(11,18,32,.60) !important; }
