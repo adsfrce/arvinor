@@ -1059,3 +1059,11 @@ html, body {
 .sub {
   color: rgba(11,18,32,.92) !important;
 }
+
+/* REMOVE all decorative fades globally */
+*::before,
+*::after {
+  background: none !important;
+  filter: none !important;
+  box-shadow: none !important;
+}
