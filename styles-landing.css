@@ -34,7 +34,7 @@ body{
   margin:0;
   font-family:var(--sans);
   color:var(--fg);
-  background: linear-gradient(180deg, #ffffff, #f7f8fa);
+  background: none;
   color: var(--fg);
   overflow-x:hidden;
 }
@@ -1291,48 +1291,40 @@ section,
   background: transparent;
 }
 
-/* =========================
-   GLOBAL BACKGROUND SYSTEM (FIXED)
-   ========================= */
+/* ===== GLOBAL BACKGROUND (WORKING) ===== */
 
-html, body {
-  background: none !important;
-}
-
-body {
+body{
   position: relative;
   z-index: 0;
 }
 
-body::before {
-  content: "";
+/* image */
+body::before{
+  content:"";
   position: fixed;
-  inset: 0;
-  z-index: 0;
+  inset:0;
+  z-index:-3;
   background-image: url("/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-body::after {
-  content: "";
+/* white overlay */
+body::after{
+  content:"";
   position: fixed;
-  inset: 0;
-  z-index: 1;
+  inset:0;
+  z-index:-2;
   background: rgba(255,255,255,0.30);
 }
 
-#global-blur {
+/* global blur */
+#global-blur{
   position: fixed;
-  inset: 0;
-  z-index: 2;
+  inset:0;
+  z-index:-1;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  pointer-events: none;
-}
-
-body > * {
-  position: relative;
-  z-index: 3;
+  pointer-events:none;
 }
