@@ -1345,7 +1345,7 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-image: url("/os-x-tiger-grey-5120x2880-24047.jpg");
+  background-image: url("background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
