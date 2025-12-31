@@ -324,7 +324,7 @@ body{
   overflow:hidden;
 }
 .device__top{
-  display:flex; align-items:center; gap:12px;
+  display:flex; align-items:center; gap:4px;
   padding: 14px 16px;
   border-bottom:1px solid rgba(255,255,255,.10);
   background: linear-gradient(180deg, rgba(10,16,32,.55), rgba(10,16,32,.18));
@@ -1048,3 +1048,14 @@ html, body {
 
 .nav__burger{border:1px solid rgba(11,18,32,.10) !important; background: rgba(255,255,255,.85) !important;}
 .nav__burger span{background: rgba(11,18,32,.70) !important;}
+
+/* FORCE readable text in light mode */
+.h1,
+.trust__k,
+.trust__v,
+.pill,
+.pill span,
+.lead,
+.sub {
+  color: rgba(11,18,32,.92) !important;
+}
